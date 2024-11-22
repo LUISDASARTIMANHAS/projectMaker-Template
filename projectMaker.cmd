@@ -1,8 +1,20 @@
 :: Criação das pastas, verificando se cada uma não existe
-if not exist "builds" mkdir "builds"
-if not exist "rascunho" mkdir "rascunho"
-if not exist "zip" mkdir "zip"
-if not exist "data" mkdir "data"
+if not exist "builds" (
+    mkdir "builds"
+    "inicialization" >> builds/builds.config
+)
+if not exist "rascunho" (
+    mkdir "rascunho"
+    "inicialization" >> rascunho/rascunho.config
+)
+if not exist "data" (
+    mkdir "data"
+    "inicialization" >> data/data.config
+)
+if not exist "zip" (
+    mkdir "zip"
+    "inicialization" >> zip/zip.config
+)
 
 :: Criação do arquivo .gitignore com o conteúdo desejado, caso não exista
 if not exist ".gitignore" (
@@ -41,7 +53,7 @@ if not exist "info.json" (
     echo { > info.json
     echo     "name": "empity", >> info.json
     echo     "version": "0.0.1", >> info.json
-    echo     "author": "LUIS DAS ARTIMANHAS", >> info.json
+    echo     "author": "LUIS DAS ARTIMANHAS & LUCAS GARCIA", >> info.json
     echo     "contact": "luisaugustodesouza785@gmail.com", >> info.json
     echo     "description": "empity", >> info.json
     echo     "license": "GNU General Public License v3.0" >> info.json
